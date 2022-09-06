@@ -3,7 +3,7 @@ package com.tiendavirtual.tiendavirtual.domain;
 public class Product
 {
     private int productId;
-    private String title;
+    private String name;
     private String description;
     private int price;
     private int categoryId;
@@ -20,14 +20,14 @@ public class Product
         this.productId = productId;
     }
 
-    public String getTitle()
+    public String getName()
     {
-        return title;
+        return name;
     }
 
-    public void setTitle(String title)
+    public void setName(String name)
     {
-        this.title = title;
+        this.name = name;
     }
 
     public String getDescription()

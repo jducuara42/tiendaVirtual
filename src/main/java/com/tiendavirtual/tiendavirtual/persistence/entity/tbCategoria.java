@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_categoria")
+@Table(name = "tb_categorias")
 public class tbCategoria
 {
     @Id
@@ -20,6 +20,16 @@ public class tbCategoria
 
     @OneToMany(mappedBy = "categoria")
     private List<tbProducto> productos;
+
+    public List<tbProducto> getProductos()
+    {
+        return productos;
+    }
+
+    public void setProductos(List<tbProducto> productos)
+    {
+        this.productos = productos;
+    }
 
     public Integer getIdCategoria()
     {

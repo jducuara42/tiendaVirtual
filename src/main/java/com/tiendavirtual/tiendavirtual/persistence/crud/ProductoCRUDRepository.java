@@ -1,7 +1,7 @@
 package com.tiendavirtual.tiendavirtual.persistence.crud;
 
-import org.springframework.data.repository.CrudRepository;
 import com.tiendavirtual.tiendavirtual.persistence.entity.tbProducto;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;

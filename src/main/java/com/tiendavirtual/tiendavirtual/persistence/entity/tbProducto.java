@@ -21,6 +21,9 @@ public class tbProducto
     @Column(name = "precio_producto")
     private Integer precioProducto;
 
+    @Column(name = "id_categoria_producto")
+    private Integer idCategoria;
+
     @Column(name = "estado_producto")
     private Boolean estadoProducto;
 
@@ -72,5 +75,24 @@ public class tbProducto
 
     public void setEstadoProducto(Boolean estadoProducto) {
         this.estadoProducto = estadoProducto;
+    }
+
+    public tbCategoria getCategoria()
+    {
+        return categoria;
+    }
+
+    public void setCategoria(tbCategoria categoria)
+    {
+        this.categoria = categoria;
+    }
+
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 }
