@@ -44,4 +44,10 @@ public class ProductController
     {
         return productService.delete(productId);
     }
+
+    @PutMapping("/update/{id}")
+    public boolean update (@PathVariable("id") int productId, @RequestBody Product product)
+    {
+        return productService.update(productId, product);
+    }
 }

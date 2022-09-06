@@ -31,7 +31,7 @@ public class ProductService
 
     public Product save(Product product)
     {
-        return  productRepository.save(product);
+        return productRepository.save(product);
     }
 
     public boolean delete(int productId)
@@ -39,6 +39,25 @@ public class ProductService
         if(getProduct(productId).isPresent())
         {
             productRepository.delete(productId);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public boolean update (int productId , Product product)
+    {
+        Product product1 = getProduct(productId).get();
+        product1.setName(product.getName());
+        product1.setCategory(product.getCategory());
+        product1.setActive(product.isActive());
+        product1.setPrice(product.getPrice());
+
+        if(getProduct(productId).isPresent())
+        {
+            save(product1);
             return true;
         }
         else
