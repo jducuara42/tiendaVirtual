@@ -18,6 +18,9 @@ public class tbProducto
     @Column(name = "descripcion_producto")
     private String descripcionProducto;
 
+    @Column(name = "imagen_producto")
+    private String imagenProducto;
+
     @Column(name = "precio_producto")
     private Integer precioProducto;
 
@@ -59,6 +62,14 @@ public class tbProducto
 
     public void setDescripcionProducto(String descripcionProducto) {
         this.descripcionProducto = descripcionProducto;
+    }
+
+    public String getImagenProducto() {
+        return imagenProducto;
+    }
+
+    public void setImagenProducto(String imagenProducto) {
+        this.imagenProducto = imagenProducto;
     }
 
     public Integer getPrecioProducto() {

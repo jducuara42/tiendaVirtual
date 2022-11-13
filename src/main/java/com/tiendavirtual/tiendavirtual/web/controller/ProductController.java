@@ -15,12 +15,14 @@ public class ProductController
     @Autowired
     private ProductService productService;
 
+    @CrossOrigin
     @GetMapping("/all")
     public List<Product> getAll()
     {
         return productService.getAll();
     }
 
+    @CrossOrigin
     @GetMapping("/{productId}")
     public Optional<Product> getProduct(@PathVariable("productId") int productId)
     {
@@ -33,18 +35,21 @@ public class ProductController
         return productService.getByCategory(categoryId);
     }
 
+    @CrossOrigin
     @PostMapping("/save")
     public Product save (@RequestBody Product product)
     {
         return productService.save(product);
     }
 
+    @CrossOrigin
     @DeleteMapping("/delete/{productId}")
     public boolean delete (@PathVariable("productId") int productId)
     {
         return productService.delete(productId);
     }
 
+    @CrossOrigin
     @PutMapping("/update/{id}")
     public boolean update (@PathVariable("id") int productId, @RequestBody Product product)
     {
