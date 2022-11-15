@@ -2,11 +2,15 @@ package com.tiendavirtual.tiendavirtual.web.controller;
 
 import com.tiendavirtual.tiendavirtual.domain.Product;
 import com.tiendavirtual.tiendavirtual.domain.service.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 @RestController
 @RequestMapping("/products")
@@ -53,6 +57,15 @@ public class ProductController
     @PutMapping("/update/{id}")
     public boolean update (@PathVariable("id") int productId, @RequestBody Product product)
     {
-        return productService.update(productId, product);
+        boolean saveState = productService.update(productId, product);
+        if (saveState)
+        {
+            Product updateState = productService.save(product);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
